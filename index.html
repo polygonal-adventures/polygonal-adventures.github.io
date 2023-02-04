@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Polygonal Adventures</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body onkeydown="keydown(event)">
+    <div id="border">
+      <div id="menu1">
+      </div>
+      <div id="menu2">
+      </div>
+      <div id="menu3">
+      </div>
+      <div id="menu4">
+      </div>
+      <div id="menu5">
+      </div>
+      <div class="line" id="border6"></div>
+      <div class="line" id="border7"></div>
+      <div class="line" id="border8"></div>
+      <div class="line" id="border9"></div>
+      <div class="line" id="border10"></div>
+      <div class="line" id="border11"></div>
+      <div class="line" id="border12"></div>
+
+      <div class="line" id="border13"></div>
+      <div class="line" id="border14"></div>
+      <div class="line" id="border15"></div>
+      <div class="line" id="border16"></div>
+      <div class="line" id="border17"></div>
+      <div class="line" id="border18"></div>
+      <div class="line" id="border19"></div>
+      <div class="line" id="border20"></div>
+      <div class="line" id="border21"></div>
+
+      <button class="playbutton row1 col1" id="playbutton1_1" onclick="play(1,1)"></button>
+      <button class="playbutton row1 col2" id="playbutton1_2" onclick="play(1,2)"></button>
+      <button class="playbutton row1 col3" id="playbutton1_3" onclick="play(1,3)"></button>
+      <button class="playbutton row1 col4" id="playbutton1_4" onclick="play(1,4)"></button>
+      <button class="playbutton row1 col5" id="playbutton1_5" onclick="play(1,5)"></button>
+      <button class="playbutton row1 col6" id="playbutton1_6" onclick="play(1,6)"></button>
+      <button class="playbutton row1 col7" id="playbutton1_7" onclick="play(1,7)"></button>
+      <button class="playbutton row1 col8" id="playbutton1_8" onclick="play(1,8)"></button>
+      <button class="playbutton row1 col9" id="playbutton1_9" onclick="play(1,9)"></button>
+      <button class="playbutton row1 col10" id="playbutton1_10" onclick="play(1,10)"></button>
+
+      <button class="playbutton row2 col1" id="playbutton2_1" onclick="play(2,1)"></button>
+      <button class="playbutton row2 col2" id="playbutton2_2" onclick="play(2,2)"></button>
+      <button class="playbutton row2 col3" id="playbutton2_3" onclick="play(2,3)"></button>
+      <button class="playbutton row2 col4" id="playbutton2_4" onclick="play(2,4)"></button>
+      <button class="playbutton row2 col5" id="playbutton2_5" onclick="play(2,5)"></button>
+      <button class="playbutton row2 col6" id="playbutton2_6" onclick="play(2,6)"></button>
+      <button class="playbutton row2 col7" id="playbutton2_7" onclick="play(2,7)"></button>
+      <button class="playbutton row2 col8" id="playbutton2_8" onclick="play(2,8)"></button>
+      <button class="playbutton row2 col9" id="playbutton2_9" onclick="play(2,9)"></button>
+      <button class="playbutton row2 col10" id="playbutton2_10" onclick="play(2,10)"></button>
+
+      <button class="playbutton row3 col1" id="playbutton3_1" onclick="play(3,1)"></button>
+      <button class="playbutton row3 col2" id="playbutton3_2" onclick="play(3,2)"></button>
+      <button class="playbutton row3 col3" id="playbutton3_3" onclick="play(3,3)"></button>
+      <button class="playbutton row3 col4" id="playbutton3_4" onclick="play(3,4)"></button>
+      <button class="playbutton row3 col5" id="playbutton3_5" onclick="play(3,5)"></button>
+      <button class="playbutton row3 col6" id="playbutton3_6" onclick="play(3,6)"></button>
+      <button class="playbutton row3 col7" id="playbutton3_7" onclick="play(3,7)"></button>
+      <button class="playbutton row3 col8" id="playbutton3_8" onclick="play(3,8)"></button>
+      <button class="playbutton row3 col9" id="playbutton3_9" onclick="play(3,9)"></button>
+      <button class="playbutton row3 col10" id="playbutton3_10" onclick="play(3,10)"></button>
+
+      <button class="playbutton row4 col1" id="playbutton4_1" onclick="play(4,1)"></button>
+      <button class="playbutton row4 col2" id="playbutton4_2" onclick="play(4,2)"></button>
+      <button class="playbutton row4 col3" id="playbutton4_3" onclick="play(4,3)"></button>
+      <button class="playbutton row4 col4" id="playbutton4_4" onclick="play(4,4)"></button>
+      <button class="playbutton row4 col5" id="playbutton4_5" onclick="play(4,5)"></button>
+      <button class="playbutton row4 col6" id="playbutton4_6" onclick="play(4,6)"></button>
+      <button class="playbutton row4 col7" id="playbutton4_7" onclick="play(4,7)"></button>
+      <button class="playbutton row4 col8" id="playbutton4_8" onclick="play(4,8)"></button>
+      <button class="playbutton row4 col9" id="playbutton4_9" onclick="play(4,9)"></button>
+      <button class="playbutton row4 col10" id="playbutton4_10" onclick="play(4,10)"></button>
+
+      <button class="playbutton row5 col1" id="playbutton5_1" onclick="play(5,1)"></button>
+      <button class="playbutton row5 col2" id="playbutton5_2" onclick="play(5,2)"></button>
+      <button class="playbutton row5 col3" id="playbutton5_3" onclick="play(5,3)"></button>
+      <button class="playbutton row5 col4" id="playbutton5_4" onclick="play(5,4)"></button>
+      <button class="playbutton row5 col5" id="playbutton5_5" onclick="play(5,5)"></button>
+      <button class="playbutton row5 col6" id="playbutton5_6" onclick="play(5,6)"></button>
+      <button class="playbutton row5 col7" id="playbutton5_7" onclick="play(5,7)"></button>
+      <button class="playbutton row5 col8" id="playbutton5_8" onclick="play(5,8)"></button>
+      <button class="playbutton row5 col9" id="playbutton5_9" onclick="play(5,9)"></button>
+      <button class="playbutton row5 col10" id="playbutton5_10" onclick="play(5,10)"></button>
+
+      <button class="playbutton row6 col1" id="playbutton6_1" onclick="play(6,1)"></button>
+      <button class="playbutton row6 col2" id="playbutton6_2" onclick="play(6,2)"></button>
+      <button class="playbutton row6 col3" id="playbutton6_3" onclick="play(6,3)"></button>
+      <button class="playbutton row6 col4" id="playbutton6_4" onclick="play(6,4)"></button>
+      <button class="playbutton row6 col5" id="playbutton6_5" onclick="play(6,5)"></button>
+      <button class="playbutton row6 col6" id="playbutton6_6" onclick="play(6,6)"></button>
+      <button class="playbutton row6 col7" id="playbutton6_7" onclick="play(6,7)"></button>
+      <button class="playbutton row6 col8" id="playbutton6_8" onclick="play(6,8)"></button>
+      <button class="playbutton row6 col9" id="playbutton6_9" onclick="play(6,9)"></button>
+      <button class="playbutton row6 col10" id="playbutton6_10" onclick="play(6,10)"></button>
+      <span id="gghide">Shooter side 1 <span id="triangleshooterside1cooldown"></span>
+      <select id="triangleshooterside1rarity">
+        <option value="common">Common</option>
+        <option value="uncommon">Uncommon</option>
+        <option value="rare">Rare</option>
+        <option value="epic">Epic</option>
+        <option value="super">Super</option>
+        <option value="legendary">Legendary</option>
+        <option value="mythical">Mythical</option>
+        <option value="ultra">Ultra</option>
+        <option value="transcendent">Transcendent</option>
+      </select>
+      <input id="triangleshooterside1level" type="number" min="1" value="1"><span id="cooldown"> <button onclick="cooldown=!cooldown">Toggle cooldown</button> <span id="cooldowntext"></span></span><br>
+      Defender side 1 <span id="triangledefenderside1cooldown"></span>
+      <select id="triangledefenderside1rarity">
+        <option value="common">Common</option>
+        <option value="uncommon">Uncommon</option>
+        <option value="rare">Rare</option>
+        <option value="epic">Epic</option>
+        <option value="super">Super</option>
+        <option value="legendary">Legendary</option>
+        <option value="mythical">Mythical</option>
+        <option value="ultra">Ultra</option>
+        <option value="transcendent">Transcendent</option>
+      </select>
+      <input id="triangledefenderside1level" type="number" min="1" value="1"><span id="otherplace"> <button onclick="otherplace=!otherplace">Toggle place on other side</button> <span id="otherplacetext"></span></span><br>
+      Attacker side 1 <span id="triangleattackerside1cooldown"></span>
+      <select id="triangleattackerside1rarity">
+        <option value="common">Common</option>
+        <option value="uncommon">Uncommon</option>
+        <option value="rare">Rare</option>
+        <option value="epic">Epic</option>
+        <option value="super">Super</option>
+        <option value="legendary">Legendary</option>
+        <option value="mythical">Mythical</option>
+        <option value="ultra">Ultra</option>
+        <option value="transcendent">Transcendent</option>
+      </select>
+      <input id="triangleattackerside1level" type="number" min="1" value="1"><span id="cost"> <button onclick="cost=!cost">Toggle cost</button> <span id="costtext"></span></span><br>
+      Exploder side 1 <span id="triangleexploderside1cooldown"></span>
+      <select id="triangleexploderside1rarity">
+        <option value="common">Common</option>
+        <option value="uncommon">Uncommon</option>
+        <option value="rare">Rare</option>
+        <option value="epic">Epic</option>
+        <option value="super">Super</option>
+        <option value="legendary">Legendary</option>
+        <option value="mythical">Mythical</option>
+        <option value="ultra">Ultra</option>
+        <option value="transcendent">Transcendent</option>
+      </select>
+      <input id="triangleexploderside1level" type="number" min="1" value="1"><span id="matter1span"> <span id="matter1colour">Matter 1:</span> <span id="matter1text"></span><span id="matter1hide"> <button onclick="matter1=document.getElementById('matter1').value">Set to:</button> <input id="matter1" type="number" min="0" value="10"> Increase by 1/<input id="matter1change" type="number" min="0" value="5">s</span></span><br>
+      Shooter side 2 <span id="triangleshooterside2cooldown"></span>
+      <select id="triangleshooterside2rarity">
+        <option value="common">Common</option>
+        <option value="uncommon">Uncommon</option>
+        <option value="rare">Rare</option>
+        <option value="epic">Epic</option>
+        <option value="super">Super</option>
+        <option value="legendary">Legendary</option>
+        <option value="mythical">Mythical</option>
+        <option value="ultra">Ultra</option>
+        <option value="transcendent">Transcendent</option>
+      </select>
+      <input id="triangleshooterside2level" type="number" min="1" value="1"><span id="matter2span"> <span id="matter2colour">Matter 2:</span> <span id="matter2text"></span><span id="matter2hide"> <button onclick="matter2=document.getElementById('matter2').value">Set to:</button> <input id="matter2" type="number" min="0" value="10"> Increase by 1/<input id="matter2change" type="number" min="0" value="5">s</span></span><br>
+      Defender side 2 <span id="triangledefenderside2cooldown"></span>
+      <select id="triangledefenderside2rarity">
+        <option value="common">Common</option>
+        <option value="uncommon">Uncommon</option>
+        <option value="rare">Rare</option>
+        <option value="epic">Epic</option>
+        <option value="super">Super</option>
+        <option value="legendary">Legendary</option>
+        <option value="mythical">Mythical</option>
+        <option value="ultra">Ultra</option>
+        <option value="transcendent">Transcendent</option>
+      </select>
+      <input id="triangledefenderside2level" type="number" min="1" value="1"><span id="health"> <button onclick="health=!health">Toggle health</button> <span id="healthtext"></span></span><br>
+      Attacker side 2 <span id="triangleattackerside2cooldown"></span>
+      <select id="triangleattackerside2rarity">
+        <option value="common">Common</option>
+        <option value="uncommon">Uncommon</option>
+        <option value="rare">Rare</option>
+        <option value="epic">Epic</option>
+        <option value="super">Super</option>
+        <option value="legendary">Legendary</option>
+        <option value="mythical">Mythical</option>
+        <option value="ultra">Ultra</option>
+        <option value="transcendent">Transcendent</option>
+      </select>
+      <input id="triangleattackerside2level" type="number" min="1" value="1"><span id="health1span"> <span id="health1colour">Health 1:</span> <span id="health1text"></span><span id="health1hide"> <button onclick="health1=document.getElementById('health1').value">Set to:</button> <input id="health1" type="number" min="0" value="1000"></span></span><br>
+      Exploder side 2 <span id="triangleexploderside2cooldown"></span>
+      <select id="triangleexploderside2rarity">
+        <option value="common">Common</option>
+        <option value="uncommon">Uncommon</option>
+        <option value="rare">Rare</option>
+        <option value="epic">Epic</option>
+        <option value="super">Super</option>
+        <option value="legendary">Legendary</option>
+        <option value="mythical">Mythical</option>
+        <option value="ultra">Ultra</option>
+        <option value="transcendent">Transcendent</option>
+      </select>
+      <input id="triangleexploderside2level" type="number" min="1" value="1"><span id="health2span"> <span id="health2colour">Health 2:</span> <span id="health2text"></span><span id="health2hide"> <button onclick="health2=document.getElementById('health2').value">Set to:</button> <input id="health2" type="number" min="0" value="1000"></span></span><br>
+      <button onclick="polygonset(1)">Shooter side 1</button><button onclick="polygonset(2)">Defender side 1</button><button onclick="polygonset(3)">Attacker side 1</button><button onclick="polygonset(4)">Exploder side 1</button><span id="polygontypetext1"></span> <button id="save1" onclick="save1()">Import/Export</button><br>
+      <button onclick="polygonset(5)">Shooter side 2</button><button onclick="polygonset(6)">Defender side 2</button><button onclick="polygonset(7)">Attacker side 2</button><button onclick="polygonset(8)">Exploder side 2</button><span id="polygontypetext2"></span> <button id="save2" onclick="save2()"">Import/Export</button> <button id="battle" onclick="battle()">Battle!</button></div></span>
+    <span id="footer"><a href="history.html" style="font-size: 20px;">History</a><span style="font-size: 20px;">&nbsp;&nbsp;</span><a href="howtoplay.html" style="font-size: 20px;">How to play</a> <a href="morestuff.txt" style="font-size: 5px;">stuff that i should code but im too lazy to</a></span>
+    <script src="script.js"></script>
+  </body>
+</html>
