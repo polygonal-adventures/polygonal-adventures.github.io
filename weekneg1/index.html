@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Polygonal Adventures</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="border">
+      <div class="line" id="border1"></div>
+      <div class="line" id="border2"></div>
+      <div class="line" id="border3"></div>
+      <div class="line" id="border4"></div>
+      <div class="line" id="border5"></div>
+      <button class="button" id="button1" onclick="changedisplay(1)"></button>
+      <button class="button" id="button2" onclick="changedisplay(2)"></button>
+      <button class="button" id="button3" onclick="changedisplay(3)"></button>
+      <button class="button" id="button4" onclick="changedisplay(4)"></button>
+      <button class="button" id="button5" onclick="changedisplay(5)"></button>
+      <div id="menu1">
+side1 attack
+      </div>
+      <div id="menu2">
+side1 block
+      </div>
+      <div id="menu3">
+press other menu buttons for results
+      </div>
+      <div id="menu4">
+side2 block
+      </div>
+      <div id="menu5">
+side2 attack
+      </div>
+      <div class="line" id="border6"></div>
+      <div class="line" id="border7"></div>
+      <div class="line" id="border8"></div>
+      <div class="line" id="border9"></div>
+      <div class="line" id="border10"></div>
+      <div class="line" id="border11"></div>
+      <div class="line" id="border12"></div>
+
+      <div class="line" id="border13"></div>
+      <div class="line" id="border14"></div>
+      <div class="line" id="border15"></div>
+      <div class="line" id="border16"></div>
+      <div class="line" id="border17"></div>
+      <div class="line" id="border18"></div>
+      <div class="line" id="border19"></div>
+      <div class="line" id="border20"></div>
+      <div class="line" id="border21"></div>
+
+      <button class="playbutton row1 col1" id="playbutton1_1" onclick="play(1,1)"></button>
+      <button class="playbutton row1 col2" id="playbutton1_2" onclick="play(1,2)"></button>
+      <button class="playbutton row1 col3" id="playbutton1_3" onclick="play(1,3)"></button>
+      <button class="playbutton row1 col4" id="playbutton1_4" onclick="play(1,4)"></button>
+      <button class="playbutton row1 col5" id="playbutton1_5" onclick="play(1,5)"></button>
+      <button class="playbutton row1 col6" id="playbutton1_6" onclick="play(1,6)"></button>
+      <button class="playbutton row1 col7" id="playbutton1_7" onclick="play(1,7)"></button>
+      <button class="playbutton row1 col8" id="playbutton1_8" onclick="play(1,8)"></button>
+      <button class="playbutton row1 col9" id="playbutton1_9" onclick="play(1,9)"></button>
+      <button class="playbutton row1 col10" id="playbutton1_10" onclick="play(1,10)"></button>
+
+      <button class="playbutton row2 col1" id="playbutton2_1" onclick="play(2,1)"></button>
+      <button class="playbutton row2 col2" id="playbutton2_2" onclick="play(2,2)"></button>
+      <button class="playbutton row2 col3" id="playbutton2_3" onclick="play(2,3)"></button>
+      <button class="playbutton row2 col4" id="playbutton2_4" onclick="play(2,4)"></button>
+      <button class="playbutton row2 col5" id="playbutton2_5" onclick="play(2,5)"></button>
+      <button class="playbutton row2 col6" id="playbutton2_6" onclick="play(2,6)"></button>
+      <button class="playbutton row2 col7" id="playbutton2_7" onclick="play(2,7)"></button>
+      <button class="playbutton row2 col8" id="playbutton2_8" onclick="play(2,8)"></button>
+      <button class="playbutton row2 col9" id="playbutton2_9" onclick="play(2,9)"></button>
+      <button class="playbutton row2 col10" id="playbutton2_10" onclick="play(2,10)"></button>
+
+      <button class="playbutton row3 col1" id="playbutton3_1" onclick="play(3,1)"></button>
+      <button class="playbutton row3 col2" id="playbutton3_2" onclick="play(3,2)"></button>
+      <button class="playbutton row3 col3" id="playbutton3_3" onclick="play(3,3)"></button>
+      <button class="playbutton row3 col4" id="playbutton3_4" onclick="play(3,4)"></button>
+      <button class="playbutton row3 col5" id="playbutton3_5" onclick="play(3,5)"></button>
+      <button class="playbutton row3 col6" id="playbutton3_6" onclick="play(3,6)"></button>
+      <button class="playbutton row3 col7" id="playbutton3_7" onclick="play(3,7)"></button>
+      <button class="playbutton row3 col8" id="playbutton3_8" onclick="play(3,8)"></button>
+      <button class="playbutton row3 col9" id="playbutton3_9" onclick="play(3,9)"></button>
+      <button class="playbutton row3 col10" id="playbutton3_10" onclick="play(3,10)"></button>
+
+      <button class="playbutton row4 col1" id="playbutton4_1" onclick="play(4,1)"></button>
+      <button class="playbutton row4 col2" id="playbutton4_2" onclick="play(4,2)"></button>
+      <button class="playbutton row4 col3" id="playbutton4_3" onclick="play(4,3)"></button>
+      <button class="playbutton row4 col4" id="playbutton4_4" onclick="play(4,4)"></button>
+      <button class="playbutton row4 col5" id="playbutton4_5" onclick="play(4,5)"></button>
+      <button class="playbutton row4 col6" id="playbutton4_6" onclick="play(4,6)"></button>
+      <button class="playbutton row4 col7" id="playbutton4_7" onclick="play(4,7)"></button>
+      <button class="playbutton row4 col8" id="playbutton4_8" onclick="play(4,8)"></button>
+      <button class="playbutton row4 col9" id="playbutton4_9" onclick="play(4,9)"></button>
+      <button class="playbutton row4 col10" id="playbutton4_10" onclick="play(4,10)"></button>
+
+      <button class="playbutton row5 col1" id="playbutton5_1" onclick="play(5,1)"></button>
+      <button class="playbutton row5 col2" id="playbutton5_2" onclick="play(5,2)"></button>
+      <button class="playbutton row5 col3" id="playbutton5_3" onclick="play(5,3)"></button>
+      <button class="playbutton row5 col4" id="playbutton5_4" onclick="play(5,4)"></button>
+      <button class="playbutton row5 col5" id="playbutton5_5" onclick="play(5,5)"></button>
+      <button class="playbutton row5 col6" id="playbutton5_6" onclick="play(5,6)"></button>
+      <button class="playbutton row5 col7" id="playbutton5_7" onclick="play(5,7)"></button>
+      <button class="playbutton row5 col8" id="playbutton5_8" onclick="play(5,8)"></button>
+      <button class="playbutton row5 col9" id="playbutton5_9" onclick="play(5,9)"></button>
+      <button class="playbutton row5 col10" id="playbutton5_10" onclick="play(5,10)"></button>
+
+      <button class="playbutton row6 col1" id="playbutton6_1" onclick="play(6,1)"></button>
+      <button class="playbutton row6 col2" id="playbutton6_2" onclick="play(6,2)"></button>
+      <button class="playbutton row6 col3" id="playbutton6_3" onclick="play(6,3)"></button>
+      <button class="playbutton row6 col4" id="playbutton6_4" onclick="play(6,4)"></button>
+      <button class="playbutton row6 col5" id="playbutton6_5" onclick="play(6,5)"></button>
+      <button class="playbutton row6 col6" id="playbutton6_6" onclick="play(6,6)"></button>
+      <button class="playbutton row6 col7" id="playbutton6_7" onclick="play(6,7)"></button>
+      <button class="playbutton row6 col8" id="playbutton6_8" onclick="play(6,8)"></button>
+      <button class="playbutton row6 col9" id="playbutton6_9" onclick="play(6,9)"></button>
+      <button class="playbutton row6 col10" id="playbutton6_10" onclick="play(6,10)"></button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
