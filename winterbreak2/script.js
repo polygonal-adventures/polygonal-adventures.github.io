@@ -122,7 +122,7 @@ class movingtriangle {
   }
   update(){
     if (this.move) {
-      this.column+=0.004*(3-2*this.side);
+      this.column+=this.speed*0.004*(3-2*this.side);
     }
     this.sprite.style.left=54*this.column-52+"px";
     if (this.column<=0.5 || this.column>=10.5){
