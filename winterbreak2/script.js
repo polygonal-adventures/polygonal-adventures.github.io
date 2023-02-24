@@ -366,7 +366,7 @@ function update(){
 }
 
 function play(a,b){
-  var i=document.getElementById("a").value.split();
+  var i=document.getElementById("a").value.split(" ");
   if (i[0]=="triangle") trianglecalc(a,b,"triangle",i[1],i[2],i[3])
   if (i[0]=="blocktriangle") new blocktriangle(a,b,i[1],i[2])
   if (i[0]=="movingtriangle") new movingtriangle(a,b,i[1],i[2],i[3],i[4])
