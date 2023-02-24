@@ -302,11 +302,13 @@ function update(){
     }
   }
   for (var i of side1m){
+    i.move=true;
     for (var j of side2p){
       j.effect(i);
     }
   }
   for (var i of side2m){
+    i.move=true;
     for (var j of side1p){
       j.effect(i);
     }
