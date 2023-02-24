@@ -455,63 +455,7 @@ function trianglecalc(a,b,type,side,rarity,level){
       }
     }
   }
-
-  if (type=="blocktriangle"){
-    if (rarity=="common"){
-      if (matter>=4){
-        matter-=4;
-        new triangle(a,b,side,10+Math.floor(level*0.25),100+Math.floor(3*level),2);
-      }
-    }
-    if (rarity=="uncommon"){
-      if (matter>=4){
-        matter-=4;
-        new triangle(a,b,side,13+Math.floor(level*0.3),120+Math.floor(3.5*level),1.925);
-      }
-    }
-    if (rarity=="rare"){
-      if (matter>=3){
-        matter-=3;
-        new triangle(a,b,side,16+Math.floor(level*0.35),140+Math.floor(4*level),1.85);
-      }
-    }
-    if (rarity=="epic"){
-      if (matter>=3){
-        matter-=3;
-        new triangle(a,b,side,19+Math.floor(level*0.4),165+Math.floor(4.5*level),1.775);
-      }
-    }
-    if (rarity=="super"){
-      if (matter>=3){
-        matter-=3;
-        new triangle(a,b,side,23+Math.floor(level*0.5),190+Math.floor(5*level),1.7);
-      }
-    }
-    if (rarity=="legendary"){
-      if (matter>=2){
-        matter-=2;
-        new triangle(a,b,side,27+Math.floor(level*0.6),220+Math.floor(5.5*level),1.625);
-      }
-    }
-    if (rarity=="mythical"){
-      if (matter>=2){
-        matter-=2;
-        new triangle(a,b,side,32+Math.floor(level*0.7),250+Math.floor(6.5*level),1.55);
-      }
-    }
-    if (rarity=="ultra"){
-      if (matter>=2){
-        matter-=2;
-        new triangle(a,b,side,38+Math.floor(level*0.85),285+Math.floor(7.5*level),1.475);
-      }
-    }
-    if (rarity=="transcendent"){
-      if (matter>=1){
-        matter-=1;
-        new triangle(a,b,side,45+Math.floor(level*1.05),320+Math.floor(9*level),1.4);
-      }
-    }
-  }
+  
   if (side==1){
     matter1=matter;
   } else {

@@ -366,34 +366,11 @@ function update(){
 }
 
 function play(a,b){
-  var nevergonnagiveyouup=document.getElementById("a").value
-  if (nevergonnagiveyouup=="1"){
-    new movingtriangle(a,b,1,0,20,20)
-  }
-  if (nevergonnagiveyouup=="2"){
-    new blocktriangle(a,b,1,50)
-  }
-  if (nevergonnagiveyouup[0]=="3"){
-    trianglecalc(a,b,"triangle",1,nevergonnagiveyouup.slice(1),1)
-  }
-  if (nevergonnagiveyouup=="4"){
-    new explodetriangle(a,b,1,100,1,10,3,3)
-  }
-  if (nevergonnagiveyouup=="5"){
-    new movingtriangle(a,b,2,100,20,20)
-  }
-  if (nevergonnagiveyouup=="6"){
-    new blocktriangle(a,b,2,50)
-  }
-  if (nevergonnagiveyouup[0]=="7"){
-    trianglecalc(a,b,"triangle",2,nevergonnagiveyouup.slice(1),1)
-  }
-  if (nevergonnagiveyouup=="8"){
-    new explodetriangle(a,b,2,100,1,10,3,3)
-  }
-  if (nevergonnagiveyouup=="never gonna give you up"){
-    new triangle(a,b,1,100,100,0.1)
-  }
+  var i=document.getElementById("a").value.split();
+  if (i[0]=="triangle") trianglecalc(a,b,"triangle",i[1],i[2],i[3])
+  if (i[0]=="blocktriangle") new blocktriangle(a,b,i[1],i[2])
+  if (i[0]=="movingtriangle") new movingtriangle(a,b,i[1],i[2],i[3],i[4])
+  if (i[0]=="explodetriangle") new explodetriangle(a,b,i[1],i[2],i[3],i[4],i[5],i[6])
 }
 
 function playcomp(type,side,rarity,level,y){
