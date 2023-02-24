@@ -315,7 +315,7 @@ function update(){
     for (var j of side2){
       if (i.row==j.row && -0.1<=i.column-j.column && i.column-j.column<=0.1){
         i.move=false;
-        j.health-=i.damage/20;
+        j.health-=i.damage/50;
         x=false;
       }
     }
@@ -328,7 +328,7 @@ function update(){
     for (var j of side1){
       if (i.row==j.row && -0.1<=i.column-j.column && i.column-j.column<=0.1){
         i.move=false;
-        j.health-=i.damage/20;
+        j.health-=i.damage/50;
         x=false;
       }
     }
@@ -341,7 +341,7 @@ function update(){
     for (var j of side2m){
       if (i.row==j.row && -0.1<=i.column-j.column && i.column-j.column<=0.1){
         i.move=false;
-        j.health-=i.damage/20;
+        j.health-=i.damage/50;
         x=false;
       }
     }
@@ -354,7 +354,7 @@ function update(){
     for (var j of side1m){
       if (i.row==j.row && -0.1<=i.column-j.column && i.column-j.column<=0.1){
         i.move=false;
-        j.health-=damage/20;
+        j.health-=i.damage/50;
         x=false;
       }
     }
