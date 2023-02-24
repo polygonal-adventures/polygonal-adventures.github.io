@@ -127,11 +127,12 @@ class movingtriangle {
     this.sprite.style.left=54*this.column-52+"px";
     if (this.column<=0.5 || this.column>=10.5){
       if (this.side==1){
-        health2-=this.damage;
+        health2-=this.damage*3;
       }
       if (this.side==2){
-        health1-=this.damage;
+        health1-=this.damage*3;
       }
+      this.delete();
     }
     if (this.health<=0){
       this.delete();
