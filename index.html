@@ -3,6 +3,7 @@
   <head>
     <title>Polygonal Adventures</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="favicon.ico" rel="icon">
   </head>
   <body onkeydown="keydown(event)">
     <div id="border">
@@ -204,7 +205,7 @@
       </select>
       <input id="triangleexploderside2level" type="number" min="1" value="1"><span id="health2span"> <span id="health2colour">Health 2:</span> <span id="health2text"></span><span id="health2hide"> <button onclick="health2=document.getElementById('health2').value">Set to:</button> <input id="health2" type="number" min="0" value="1000"></span></span><br>
       <button onclick="polygonset(1)">Shooter side 1</button><button onclick="polygonset(2)">Defender side 1</button><button onclick="polygonset(3)">Attacker side 1</button><button onclick="polygonset(4)">Exploder side 1</button><span id="polygontypetext1"></span> <button id="save1" onclick="save1()">Import/Export</button><br>
-      <button onclick="polygonset(5)">Shooter side 2</button><button onclick="polygonset(6)">Defender side 2</button><button onclick="polygonset(7)">Attacker side 2</button><button onclick="polygonset(8)">Exploder side 2</button><span id="polygontypetext2"></span> <button id="save2" onclick="save2()"">Import/Export</button> <button id="battle" onclick="battle()">Battle!</button></div></span>
+      <button onclick="polygonset(5)">Shooter side 2</button><button onclick="polygonset(6)">Defender side 2</button><button onclick="polygonset(7)">Attacker side 2</button><button onclick="polygonset(8)">Exploder side 2</button><span id="polygontypetext2"></span> <button id="save2" onclick="save2()">Import/Export</button> <button id="battle" onclick="battle()">Battle!</button> <button id="sound" onclick="sound=!sound"></button></span></div>
     <span id="footer"><a href="history.html" style="font-size: 20px;">History</a><span style="font-size: 20px;">&nbsp;&nbsp;</span><a href="howtoplay.html" style="font-size: 20px;">How to play</a> <a href="morestuff.txt" style="font-size: 5px;">stuff that i should code but im too lazy to</a></span>
     <script src="script.js"></script>
   </body>

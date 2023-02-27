@@ -10,7 +10,6 @@ add daily rewards
 add some kind of info about each polygon
 add more mobile support
 add skins
-add some hidden easter eggs (geometry dash?)
 add quests or something like that
 add some kind of storyline or something (idk)
 add cloud save data but idk how that works so no

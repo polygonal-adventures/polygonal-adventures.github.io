@@ -14,6 +14,7 @@
     this.sprite.style.pointerEvents="none";
     this.interval1=setInterval(this.attack.bind(this),this.time*1000);
     this.interval2=setInterval(this.update.bind(this),20);
+    if (sound) new Audio("audio/buy.mp3").play();
     if (this.side==1){
       side1.push(this);
     }
@@ -22,14 +23,17 @@
     }
   }
   attack(){
-    if (!gg) new triangleprojectile(this.row,this.column,this.side,this.damage);
+    if (!gg){
+      new triangleprojectile(this.row,this.column,this.side,this.damage);
+      if (sound) new Audio("audio/shoot.mp3").play();
+    }
   }
   update(){
     if (this.health<=0){
       this.delete();
     }
   }
-  delete(){
+  delete(sound2=true){
     if (this.side==1){
       side1.splice(side1.indexOf(this),1);
     }
@@ -40,6 +44,7 @@
     placed[this.row-1][this.column-1]=0;
     clearInterval(this.interval1);
     clearInterval(this.interval2);
+    if (sound && sound2) new Audio("audio/die.mp3").play();
   }
 }
 
@@ -124,6 +129,7 @@ class triangleattacker {
     if (this.side==2){
       side2m.push(this);
     }
+    if (sound) new Audio("audio/buy.mp3").play();
   }
   update(){
     if (this.move && !gg) {
@@ -143,7 +149,7 @@ class triangleattacker {
       this.delete();
     }
   }
-  delete(){
+  delete(sound2=true){
     if (this.side==1){
       side1m.splice(side1m.indexOf(this),1);
     }
@@ -152,6 +158,7 @@ class triangleattacker {
     }
     this.sprite.style.display="none";
     clearInterval(this.interval1);
+    if (sound && sound2) new Audio("audio/die.mp3").play();
   }
 }
 
@@ -190,6 +197,7 @@ class triangledefender {
     if (this.side==2){
       side2.push(this);
     }
+    if (sound) new Audio("audio/buy.mp3").play();
   }
   update(){
     if (this.health<=this.totalhealth*2/3){
@@ -206,7 +214,7 @@ class triangledefender {
       this.delete();
     }
   }
-  delete(){
+  delete(sound2=true){
     if (this.side==1){
       side1.splice(side1.indexOf(this),1);
     }
@@ -218,6 +226,7 @@ class triangledefender {
     this.sprite3.style.display="none";
     placed[this.row-1][this.column-1]=0;
     clearInterval(this.interval1);
+    if (sound && sound2) new Audio("audio/die.mp3").play();
   }
 }
 
@@ -244,6 +253,7 @@ class triangleexploder {
     if (this.side==2){
       side2.push(this);
     }
+    if (sound) new Audio("audio/buy.mp3").play();
   }
   attack(){
     if (!gg){
@@ -278,7 +288,7 @@ class triangleexploder {
       this.delete();
     }
   }
-  delete(){
+  delete(sound2=true){
     if (this.side==1){
       side1.splice(side1.indexOf(this),1);
     }
@@ -289,11 +299,12 @@ class triangleexploder {
     placed[this.row-1][this.column-1]=0;
     clearTimeout(this.interval1);
     clearInterval(this.interval2);
+    if (sound && sound2) new Audio("audio/die.mp3").play();
   }
 }
 
 function changedisplay(num){
-  for (i=1; i<=5; i++){
+  for (var i=1; i<=5; i++){
     document.getElementById("menu"+i).style.display="none";
   }
   document.getElementById("menu"+num).style.display="block";
@@ -385,7 +396,7 @@ function update(){
       }
     }
   }
-  
+
   if (cooldown){
     document.getElementById("cooldowntext").innerHTML="True";
     document.getElementById("triangleshooterside1cooldown").innerHTML=diff(time11,new Date().getTime());
@@ -407,7 +418,7 @@ function update(){
     document.getElementById("triangleattackerside2cooldown").innerHTML="";
     document.getElementById("triangleexploderside2cooldown").innerHTML="";
   }
-  
+
   if (otherplace){
     document.getElementById("otherplacetext").innerHTML="True";
     document.getElementById("border17").style.borderColor="black";
@@ -417,7 +428,7 @@ function update(){
     document.getElementById("border17").style.borderColor="red";
     document.getElementById("border17").style.backgroundColor="red";
   }
-  
+
   if (cost){
     document.getElementById("costtext").innerHTML="True";
     document.getElementById("matter1span").style.display="inline";
@@ -431,7 +442,7 @@ function update(){
     document.getElementById("matter1span").style.display="none";
     document.getElementById("matter2span").style.display="none";
   }
-  
+
   if (health){
     document.getElementById("healthtext").innerHTML="True";
     document.getElementById("health1span").style.display="inline";
@@ -445,7 +456,7 @@ function update(){
     document.getElementById("health1span").style.display="none";
     document.getElementById("health2span").style.display="none";
   }
-  
+
   document.getElementById("triangleshooterside1level").value=numberify(document.getElementById("triangleshooterside1level").value);
   document.getElementById("triangledefenderside1level").value=numberify(document.getElementById("triangledefenderside1level").value);
   document.getElementById("triangleattackerside1level").value=numberify(document.getElementById("triangleattackerside1level").value);
@@ -468,7 +479,10 @@ function update(){
   document.getElementById("matter2colour").style.color="black";
   document.getElementById("health1colour").style.color="black";
   document.getElementById("health2colour").style.color="black";
-  
+
+  if (sound) document.getElementById("sound").innerHTML="Mute";
+  else document.getElementById("sound").innerHTML="Unmute";
+
   if (battlemode){
     if (polygontype1==1) document.getElementById("polygontypetext1").innerHTML=" Shooter";
     if (polygontype1==2) document.getElementById("polygontypetext1").innerHTML=" Defender";
@@ -484,43 +498,73 @@ function update(){
     }
     if (health1<0 && health2>=0){
       gg=true;
-      for (var i=1; i<=5; i++){
-        for (var j=1; j<=6; j++){
-          document.getElementById("playbutton"+j+"_"+i).style.backgroundColor="black";
-        }
-      }
       rainbowcolour+=10;
-      for (var i=6; i<=10; i++){
-        for (var j=1; j<=6; j++){
-          document.getElementById("playbutton"+j+"_"+i).style.backgroundColor="hsl("+rainbowcolour+",100%,50%)";
+      for (var i=1; i<=6; i++){
+        for (var j=6; j<=10; j++){
+          document.getElementById("playbutton"+i+"_"+j).style.backgroundColor="hsl("+rainbowcolour+",100%,50%)";
         }
       }
-      for (i of side1) i.delete();
-      for (i of side1m) i.delete();
-      for (i of side1p) i.delete();
-      for (i of side2m) if (i.column<6) i.delete();
-      document.getElementById("gghide").style.display="none";
-      document.getElementById("menu3").innerHTML="GG player 2";
+      if (!done){
+        done=true;
+        for (var i=1; i<=6; i++){
+          for (var j=1; j<=5; j++){
+            document.getElementById("playbutton"+i+"_"+j).style.backgroundColor="black";
+          }
+        }
+        for (var i of [].concat(side1,side1m,side1p)) i.delete(false);
+        for (var i of side2m.slice()) if (i.column<6) i.delete(false);
+        document.getElementById("gghide").style.display="none";
+        if (gd2>=3 || rick2>=3){
+          document.getElementById("menu3").innerHTML="GG player 2 (with hacks)";
+          if (document.getElementById("border").style.display!="none"){
+            setTimeout(()=>(document.getElementById("border").style.display="none"),1000)
+            setTimeout(()=>(document.getElementById("footer").style.display="none"),1000)
+            if (gd2>=3){
+              setTimeout(()=>(document.body.innerHTML+="<video autoplay style='height: 100%; width: 100%; object-fit: fill;'><source src='stereo madness.mp4' type='video/mp4'></video>"),1000)
+            }
+            if (rick2>=3){
+              setTimeout(()=>(document.body.innerHTML+="<video autoplay style='height: 100%; width: 100%; object-fit: fill;'><source src='rickroll.mp4' type='video/mp4'></video>"),1000)
+            }
+          }
+        }
+        else document.getElementById("menu3").innerHTML="GG player 2";
+        if (sound) new Audio("audio/win.mp3").play();
+      }
     }
     if (health2<0 && health1>=0){
       gg=true;
-      for (var i=6; i<=10; i++){
-        for (var j=1; j<=6; j++){
-          document.getElementById("playbutton"+j+"_"+i).style.backgroundColor="black";
-        }
-      }
       rainbowcolour+=10;
-      for (var i=1; i<=5; i++){
-        for (var j=1; j<=6; j++){
-          document.getElementById("playbutton"+j+"_"+i).style.backgroundColor="hsl("+rainbowcolour+",100%,50%)";
+      for (var i=1; i<=6; i++){
+        for (var j=1; j<=5; j++){
+          document.getElementById("playbutton"+i+"_"+j).style.backgroundColor="hsl("+rainbowcolour+",100%,50%)";
         }
       }
-      for (i of side2) i.delete();
-      for (i of side2m) i.delete();
-      for (i of side2p) i.delete();
-      for (i of side1m) if (i.column>5) i.delete();
-      document.getElementById("gghide").style.display="none";
-      document.getElementById("menu3").innerHTML="GG player 1";
+      if (!done){
+        done=true;
+        for (var i=1; i<=6; i++){
+          for (var j=6; j<=10; j++){
+            document.getElementById("playbutton"+i+"_"+j).style.backgroundColor="black";
+          }
+        }
+        for (var i of [].concat(side2,side2m,side2p)) i.delete(false);
+        for (var i of side1m.slice()) if (i.column>5) i.delete(false);
+        document.getElementById("gghide").style.display="none";
+        if (gd1>=3 || rick1>=3){
+          document.getElementById("menu3").innerHTML="GG player 1 (with hacks)";
+          if (document.getElementById("border").style.display!="none"){
+            setTimeout(()=>(document.getElementById("border").style.display="none"),1000)
+            setTimeout(()=>(document.getElementById("footer").style.display="none"),1000)
+            if (gd1>=3){
+              setTimeout(()=>(document.body.innerHTML+="<video autoplay style='height: 100%; width: 100%; object-fit: fill;'><source src='stereo madness.mp4' type='video/mp4'></video>"),1000)
+            }
+            if (rick1>=3){
+              setTimeout(()=>(document.body.innerHTML+="<video autoplay style='height: 100%; width: 100%; object-fit: fill;'><source src='rickroll.mp4' type='video/mp4'></video>"),1000)
+            }
+          }
+        }
+        else document.getElementById("menu3").innerHTML="GG player 1";
+        if (sound) new Audio("audio/win.mp3").play();
+      }
     }
     if (health1<0 && health2<0){
       gg=true;
@@ -530,8 +574,12 @@ function update(){
           document.getElementById("playbutton"+j+"_"+i).style.backgroundColor="hsl("+rainbowcolour+",100%,50%)";
         }
       }
-      document.getElementById("gghide").style.display="none";
-      document.getElementById("menu3").innerHTML="Tie";
+      if (!done){
+        done=true;
+        document.getElementById("gghide").style.display="none";
+        document.getElementById("menu3").innerHTML="Tie";
+        if (sound) new Audio("audio/win.mp3").play();
+      }
     }
   } else {
     if (polygontype==1) document.getElementById("polygontypetext1").innerHTML=" Shooter side 1";
@@ -552,7 +600,7 @@ function update(){
 }
 
 function play(y,x){
-  if (!battlemode){  
+  if (!battlemode){
     if (polygontype<=4) var side=1;
     else var side=2;
     var polygontype0=polygontype;
@@ -689,7 +737,7 @@ function trianglecalc(a,b,type,side,rarity,level){
       }
     }
   }
-  
+
   if (type=="triangledefender" && (use2 || !cooldown) && !placed[a-1][b-1]){
     if (rarity=="common"){
       if (matter>=2 || !cost){
@@ -923,7 +971,7 @@ function trianglecalc(a,b,type,side,rarity,level){
       }
     }
   }
-  
+
   if (side==1){
     matter1=matter;
   } else {
@@ -972,7 +1020,7 @@ function battle(){
   matter2=document.getElementById("matter2").value;
   add1timeout=setTimeout(add1,document.getElementById("matter1change").value*1000);
   add2timeout=setTimeout(add2,document.getElementById("matter2change").value*1000);
-  for (i of [].concat(side1,side1m,side1p,side2,side2m,side2p)) i.delete();
+  for (var i of [].concat(side1,side1m,side1p,side2,side2m,side2p)) i.delete(false);
   use11=1;
   use12=1;
   use13=1;
@@ -989,6 +1037,7 @@ function battle(){
   time22=0;
   time23=0;
   time24=0;
+  if (sound) new Audio("audio/battle.mp3").play();
 }
 
 function keydown(event){
@@ -1012,6 +1061,31 @@ function keydown(event){
     if (keypressed=="l" && xpos2<=9) xpos2++;
     if (keypressed=="e") play(ypos1,xpos1);
     if (keypressed=="u") play(ypos2,xpos2);
+    if (keypressed=="q") gd1++;
+    if (keypressed=="r") rick1++;
+    if (keypressed=="o") gd2++;
+    if (keypressed=="y") rick2++;
+    if ((gd1==3 || rick1==3) && !gg && battlemode && !hacked){
+      hacked=true;
+      sound=false;
+      for (var i of [].concat(side1,side1m,side1p)) i.delete();
+      for (var i=1; i<=6; i++){
+        for (var j=1; j<=5; j++){
+          new triangleshooter(i,j,1,Infinity,Infinity,0)
+        }
+      }
+    }
+    if ((gd2==3 || rick2==3) && !gg && battlemode && !hacked){
+      hacked=true;
+      sound=false;
+      for (var i of [].concat(side2,side2m,side2p)) i.delete();
+      for (var i=1; i<=6; i++){
+        for (var j=6; j<=10; j++){
+          new triangleshooter(i,j,2,Infinity,Infinity,0)
+        }
+      }
+    }
+
   } else {
     if (keypressed=="1") polygontype=1;
     if (keypressed=="2") polygontype=2;
@@ -1081,6 +1155,7 @@ function keydown(event){
     if (keypressed==" ") play(ypos1,xpos1);
     if (keypressed=="b") battle();
   }
+  if (keypressed=="m") sound=!sound;
 }
 
 function save1() {
@@ -1167,4 +1242,11 @@ var rainbowcolour=0;
 var gg=false;
 var add1timeout=setTimeout(add1,document.getElementById("matter1change").value*1000);
 var add2timeout=setTimeout(add2,document.getElementById("matter2change").value*1000);
+var gd1=0;
+var rick1=0;
+var gd2=0;
+var rick2=0;
+var hacked=false;
+var done=false;
+var sound=true;
 setInterval(update,20);
